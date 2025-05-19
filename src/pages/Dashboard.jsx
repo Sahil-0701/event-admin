@@ -1,54 +1,22 @@
 import React from "react";
-import {
-  FaCalendarAlt,
-  FaUserFriends,
-  FaChartLine,
-  FaThumbsUp,
-} from "react-icons/fa";
-import Card from "../components/Card";
 
 const Dashboard = () => {
-  return (
-    <div className="flex flex-col p-6 bg-gray-50  min-h-screen transition-colors">
-      {/* Welcome Heading */}
-      <div className="mb-8">
-        <h1 className="text-3xl sm:text-4xl font-extrabold text-gray-800 ">
-          Welcome <span className="text-red-500">Back</span>
-        </h1>
-        <p className="text-gray-500  mt-1 text-sm">
-          Here’s a quick overview of your event management metrics.
-        </p>
-      </div>
+  const admin = JSON.parse(localStorage.getItem("admin"));
+  const name = admin?.name || "Admin";
 
-      {/* Cards Section */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-        <Card
-          title="Upcoming Events"
-          value="8"
-          icon={<FaCalendarAlt className="text-blue-500 text-xl" />}
-          footer="Next week"
-        />
-        <Card
-          title="Registered Attendees"
-          value="1,520"
-          icon={<FaUserFriends className="text-green-500 text-xl" />}
-          footer="Total since event started"
-        />
-        <Card
-          title="Events Scheduled"
-          value="45"
-          icon={<FaChartLine className="text-purple-500 text-xl" />}
-          footer="This quarter"
-        />
-        <Card
-          title="Event Feedback"
-          value="4.7/5"
-          icon={<FaThumbsUp className="text-yellow-500 text-xl" />}
-          footer="Average Rating"
-        />
-      </div>
+ return (
+  <div className="space-y-8 my-6 sm:my-8 md:my-10 lg:my-12 max-w-4xl mx-auto px-4">
+    <div className="text-center">
+      <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-gray-800">
+        Welcome back, <span className="text-red-500">{name}</span>!
+      </h1>
+      <p className="text-gray-600 mt-3 text-base sm:text-lg max-w-xl mx-auto">
+        Here's a quick overview of your event management metrics.
+      </p>
     </div>
-  );
+  </div>
+);
+
 };
 
 export default Dashboard;

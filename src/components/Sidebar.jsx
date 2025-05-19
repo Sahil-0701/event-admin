@@ -12,7 +12,7 @@ const Sidebar = () => {
     }`;
 
   return (
-    <aside className="w-64 md:flex hidden bg-gray-900 text-white sticky top-[10vh] h-[calc(100vh-10vh)] p-6 overflow-y-auto shadow-lg flex-col justify-between">
+    <aside className="w-64 md:flex hidden bg-gray-900 text-white fixed top-[72px] left-0 h-[calc(100vh-72px)] p-6 overflow-y-auto shadow-lg flex-col justify-between">
       {/* Top: Admin Panel heading */}
       <div>
         <h2 className="text-2xl font-bold mb-6 text-center tracking-wide">
@@ -33,10 +33,10 @@ const Sidebar = () => {
             <Boxes size={20} />
             All Events
           </NavLink>
-          <NavLink to="/orders" className={navLinkClasses}>
+          {/* <NavLink to="/orders" className={navLinkClasses}>
             <Package size={20} />
             Orders
-          </NavLink>
+          </NavLink> */}
         </nav>
       </div>
 
